@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>entry dp</title>
+        <style>
+            lable{
+                display:inline-block;
+                width:80px;
+            }
+            input,select{
+                width:120px;
+
+            }
+        </style>
+    </head>
+<body class="bg-info">
+    <div class="container container fluid container well  bg-info">
+        <center>
+            <p bg-danger>
+    <label>Name :</label><input id="Namebox" type="text"><br><br>
+    <label>RollNo :</label><input id="Rollbox" type="text"><br><br>
+    <label>Section :</label><input id="Secbox" type="text"><br><br>
+    <label>Gender :</label>
+    <select id="Genbox">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+
+    <hr>
+    <div class="btn-group">
+      <button class="btn btn-success btn-fluid" id="Insbtn">INSERT</button>
+      <button class="btn btn-primary btn-fluid" id="Selbtn">Select</button>
+      <button class="btn btn-info btn-fluid" id="Upbtn">Update</button>
+      <button class="btn btn-warning btn-fluid" id="Delbtn">Delete</button>
+    </div>
+</p>
+</center>
+</div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyD6R0sAQpI7GOvFJnXPhcL_-GIJ7K5k1r8",
+          authDomain: "entry-eceb7.firebaseapp.com",
+          projectId: "entry-eceb7",
+          storageBucket: "entry-eceb7.appspot.com",
+          messagingSenderId: "606512843329",
+          appId: "1:606512843329:web:58138f90a467724b3754c0"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        import {getDatabase, ref, get, set, child, update, remove} 
+        from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+         
+        const dp= getDatabase();
+
+        var namebox = document.getElementById("Namebox");
+        var rollbox = document.getElementById("Rollbox");
+        var secbox = document.getElementById("Secbox");
+        var genbox = document.getElementById("Genbox");
+
+        var insbtn = document.getElementById("Insbtn");
+        var selbtn = document.getElementById("Selbtn");
+        var updbtn = document.getElementById("Upbtn");
+        var delbtn = document.getElementById("Delbtn");
+
+        function InsertData(){
+            set(ref(dp, "TheStudents/"+ rollbox.value),{
+                NameOfStd: namebox.value,
+                RollNO: rollbox.value,
+                Section: secbox.value,
+                Gender: genbox.value
+            })
+            .then(()=>{
+                alert("data stored successfully");
+            })
+            .catch((error)=>{
+                alert("Unsuccessfull, error"+error);
+            });
+        }
+        function SelectData(){
+            const dbref = ref(dp);
+            
+            get(child(dbref,"TheStudents/"+rollbox.value)).then((snapshot)=>{
+                if(snapshot.exists()){
+                   namebox.value = snapshot.val().NameOfStd;
+                   secbox.value = snapshot.val().Section;
+                   genbox.value = snapshot.val().Gender;
+                }
+                else{
+                    alert("NO data found");
+                }
+            })
+            .catch((error)=>{
+                alert("Unsuccessfull, error"+error);
+            });
+        }
+
+        function updateData(){
+            update(ref(dp, "TheStudents/"+ rollbox.value),{
+                NameOfStd: namebox.value,
+                Section: secbox.value,
+                Gender: genbox.value
+            })
+            .then(()=>{
+                alert("data updated successfully");
+            })
+            .catch((error)=>{
+                alert("Unsuccessfull, error"+error);
+            });
+        }
+        
+        function DeleteData(){
+            remove(ref(dp, "TheStudents/"+ rollbox.value))
+            .then(()=>{
+                alert("remove data successfully");
+            })
+            .catch((error)=>{
+                alert("Unsuccessfull, error"+error);
+            });
+        }
+        insbtn.addEventListener('click', InsertData);
+        selbtn.addEventListener('click', SelectData);
+        updbtn.addEventListener('click', updateData);
+        delbtn.addEventListener('click', DeleteData);
+      </script>
+</body>
+</html>
