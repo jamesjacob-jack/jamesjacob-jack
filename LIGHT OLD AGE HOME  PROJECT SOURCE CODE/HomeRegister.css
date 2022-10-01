@@ -1,0 +1,85 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+img{
+	float:left;
+	margin-left:10px;
+	border-radius:54px;
+}
+.head{
+	margin-bottom:10px;
+	margin-left:35%;
+	float:left;
+	font-size:20px;
+	font-weight:bold;
+	color:white;
+}
+
+
+.button,.reset{
+	width:200px;
+	height:30px;
+	border-radius:20px;
+	margin-left:110px;
+	margin-bottom:80px;
+	background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(7,17,24,1) 0%, rgba(44,220,223,1) 100%,
+                            rgba(64,232,30,1) 100%, rgba(26,174,217,1) 100%);
+	border:solid black 2px;
+	color:white;
+	
+}
+.button:hover{
+	background: rgb(131,58,180);
+background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(44,220,223,1) 0%, rgba(7,17,24,1) 100%,
+                            rgba(64,232,30,1) 100%, rgba(26,174,217,1) 100%);
+                             box-shadow:0 5px 20px rgba(0,0,0,.7);
+}
+
+::placeholder{
+	color:red;
+	padding-left:30px;
+}
+
+input{
+	
+	background:none;
+	outline:none;
+	
+}
+
+.h1{
+	width:150px;
+}
+#bloodg{
+	width:150px;
+}
+.but{
+	width:200px;
+	height:30px;
+	border-radius:20px;
+	margin-left:90px;
+	margin-top:10px;
+	background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(7,17,24,1) 0%, rgba(44,220,223,1) 100%,
+                            rgba(64,232,30,1) 100%, rgba(26,174,217,1) 100%);
+	border:solid black 2px;
+	color:white;
+	
+}
+.but:hover{
+	background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(44,220,223,1) 0%, rgba(7,17,24,1) 100%,
+                            rgba(64,232,30,1) 100%, rgba(26,174,217,1) 100%);
+                             box-shadow:0 5px 20px rgba(0,0,0,.7);
+}
+.staff{
+	position:absolute;
+	left:560px;
+	top:535px;
+	
+	
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{
+    background-color:#3AAFA9;
+ }
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+h4{
+background-color: #FEFFED;
+padding: 30px 35px;
+margin: -10px -50px;
+text-align:center;
+border-radius: 10px 10px 0 0;
+}
+hr{
+margin: 10px -50px;
+border: 0;
+border-top: 1px solid #ccc;
+margin-bottom: 40px;
+}
+div.container:hover{
+    border:3px solid yellow;
+ }
+div.container{
+background:rgba(255,255,255,0.1);
+	backdrop-filter:blur(9px);
+	box-shadow:0 5px 20px rgba(0,0,0,.7);
+	position:absolute;
+	width:400px;
+	height:600px;
+	top:110px;
+	left:38%;
+	border-radius:10px;
+	border:2px solid white;
+	margin-left:10px;
+margin:35px auto;
+font-family: 'Raleway', sans-serif;
+}
+div.main{
+width: 300px;
+padding: 10px 50px 25px;
+font-family: raleway;
+float:left;
+margin-top:50px;
+}
+input[type=text],input[type=password]{
+width: 100%;
+height: 40px;
+padding: 5px;
+margin-bottom: 25px;
+margin-top: 5px;
+border:none;
+border-bottom: 3px solid black;
+background:none;
+color:black;
+font-size: 16px;
+outline:none;
+}
+label{
+color:black;
+font-size: 20px;
+font-weight: bold;
+}
+center{
+font-size:32px;
+}
+.back{
+text-decoration: none;
+border: 1px solid rgb(0, 143, 255);
+background-color: rgb(0, 214, 255);
+padding: 3px 20px;
+border-radius: 2px;
+color: black;
+}
+input[type=button]{
+font-size: 16px;
+
+border: 1px solid #e5a900;
+color: #4E4D4B;
+font-weight: bold;
+cursor: pointer;
+width: 100%;
+border-radius: 5px;
+padding: 10px 0;
+outline:none;
+}
+input[type=button]:hover{
+background: linear-gradient(#ffdd7f 5%, #ffbc00 100%);
+}
+
+</style>
+<script>
+var attempt = 3; 
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+if ( username == "jack" && password == "jack"){
+window.location = "home.html";
+return false;
+}
+else{
+attempt --;
+alert("You have left "+attempt+" attempt;");
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
+</script>
+</head>
+<body>
+<div class="container">
+<div class="main">
+<CENTER><h3>LOG IN</h3></CENTER>
+<form  id="form_id" method="post" name="myform" >
+<label>User Name :</label>
+<input type="text" name="username" id="username"/>
+<label>Password :</label>
+<input type="password" name="password" id="password"/>
+<input type="button" value="Login" id="submit" onclick="validate()"/>
+</form>
+
+</div>
+</div>
+</body>
+</html>

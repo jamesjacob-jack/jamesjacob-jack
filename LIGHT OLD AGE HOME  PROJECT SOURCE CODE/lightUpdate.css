@@ -1,0 +1,40 @@
+*{
+	margin:0;
+	padding:0;
+}
+html{
+    height:100%;
+ }
+
+
+.but,.reset{
+	width:200px;
+	height:30px;
+	border-radius:20px;
+	margin-left:90px;
+	margin-bottom:80px;
+	background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(7,17,24,1) 0%, rgba(44,220,223,1) 100%,
+                            rgba(64,232,30,1) 100%, rgba(26,174,217,1) 100%);
+	border:solid black 2px;
+	color:white;
+	
+}
+.but:hover{
+	background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(44,220,223,1) 0%, rgba(7,17,24,1) 100%,
+                            rgba(64,232,30,1) 100%, rgba(26,174,217,1) 100%);
+                             box-shadow:0 5px 20px rgba(0,0,0,.7);
+}
+::placeholder{
+	color:red;
+	padding-left:30px;
+}
+
+after::input{
+	border:none;
+}
+
+.h1{
+	width:150px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Light Old Age Home</title>
+<style>
+     body{
+       margin:0;
+       padding:0;
+       font-family:arial;
+     }
+     .container{
+       position:absolute;
+       left:0;
+       top:0;
+       width:100%;
+       height:100vh;
+       animation:animate 16s ease-in-out infinite;
+       background-size:cover;
+     }
+     .outer{
+       position:absolute;
+       left:0;
+       top:0;
+       width:100%;
+       height:100vh;
+       background:rgba(0,0,0,0.7);
+     }
+     .details{
+       position:absolute;
+       left:50%;
+       top:50%;
+       transform:translate(-50%,-50%);
+       text-align:center;
+     }
+     .details h1{
+        font-size:3em;
+        color:#fff;
+     } 
+     @keyframes animate{
+        0%,100%{
+          background-image:url(22.jpg);
+        }
+        25%{
+          background-image:url(77.jpg);
+        }
+        50%{
+          background-image:url(66.jpg);
+        }
+        75%{
+          background-image:url(55.webp);
+        }
+     }
+     .butt{
+	width:250px;
+	height:40px;
+	border-radius:20px;
+	margin-left:90px;
+	margin-top:100px;
+	background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(7,17,24,1) 0%, rgba(44,220,223,1) 100%,
+                            rgba(64,232,30,1) 100%, rgba(26,174,217,1) 100%);
+	border:solid black 2px;
+	color:white;
+	
+}
+.butt:hover{
+	background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(44,220,223,1) 0%, rgba(7,17,24,1) 100%,
+                            rgba(64,232,30,1) 100%, rgba(26,174,217,1) 100%);
+                             box-shadow:0 5px 20px rgba(0,0,0,.7);
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="outer">
+        <div class="details">
+              <h1>LIGHT OLD AGE HOME</h1>
+              <form action="validate.html" method="post">
+                          <input type="submit" name="register" value="LOGIN" class="butt">
+               </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

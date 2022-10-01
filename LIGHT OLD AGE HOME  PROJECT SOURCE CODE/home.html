@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Light Old Age Home page</title>
+<link rel="styleSheet" href="HomeRegister.css">
+<script type = "text/javascript">
+function replace() {
+document.getElementById("div11").style.display="none";
+document.getElementById("div12").style.display="block";
+}
+function backreplace() {
+document.getElementById("div11").style.display="block";
+document.getElementById("div12").style.display="none";
+}
+</script>
+<style>
+html{
+	height:100%;
+}
+body{
+	
+	background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin:0;
+    background-size: cover;	
+    background-color:#3AAFA9;
+    width:100%;
+    height:100%;
+}
+ .boxone,.boxtwo{
+		background:rgba(255,255,255,0.1);
+		backdrop-filter:blur(9px);
+		box-shadow:0 5px 20px rgba(0,0,0,.9);
+		position:absolute;
+		align-items:center;
+		width:925px;
+		height:600px;
+		color:black;
+		top:110px;
+		left:75px;
+		border-radius:10px;
+		border:1px solid black;
+		padding-top:20px;
+		
+		
+	}
+	.box2{
+	padding-top:20px;
+	background:rgba(255,255,255,0.1);
+	backdrop-filter:blur(9px);
+	box-shadow:0 5px 20px rgba(0,0,0,.7);
+	position:absolute;
+	width:400px;
+	height:600px;
+	top:110px;
+	left:1100px;
+	border-radius:10px;
+	border:1px solid black;
+	margin-left:10px;
+}
+	.label{
+	   padding:10px 0 0 20px;
+	   margin-top:15px;
+	   font-size:30px;
+	   font-style:normal;
+	   font-weight:bold;
+	   color:dark_blue;
+	}
+	input{
+	  font-size:20px;
+	  font-style:bold;
+	  margin-top:20px;
+	  outline:none;
+	  margin-bottom:10px;
+	  color:black;
+	margin-top:8px;
+	border:none;
+	border-bottom:3px solid black;
+	}
+	.id,.searchid{
+	width:200px;
+	height:30px;
+	border-radius:20px;
+	margin-left:110px;
+	margin-bottom:15px;
+	background:none;
+	border:2px solid black;
+	color:black;
+}
+.searchid{
+	margin-top:20px;
+}
+</style>
+</head>
+<body>
+
+<form action="lightInsert.jsp" autocomplete="off">
+<div class="boxone" id="div11" style="display:block">
+<label class="label" for="id">ID:</label><input type="text" name="id" id="id" autocomplete="off" required><br/>
+<label class="label" for="name">Name:</label><input type="text" name="name" id="name" autocomplete="off" required><br/>
+<label class="label"for="spouse">Husband/wife Name:</label> <select name="adjective" id="adjective">
+                                                               <option value="Mr.">Mr</option>
+                                                               <option value="Mrs.">Mrs</option>
+                                                            </select> 
+                                                            <input type="text" name="spouse" id="spouse" autocomplete="off" required><br/>
+<label class="label" for="father">Father's Name:</label>
+                                                       <input type="text" name="father" id="father" required>Phone:
+                                                       <input type="text" name="father_phone" id="father_phone"  autocomplete="off" required><br/>   
+<label class="label" for="mother">Mother's Name:</label>       
+                                                       <input type="text" name="mother" id="mother" required>Phone:
+                                                       <input type="text" name="mother_phone" id="mother_phone" autocomplete="off" required><br/>    
+<label class="label" for="mother">Guardian Name:</label>       
+                                                       <input type="text" name="guardian" id="guardian" required>Phone:
+                                                       <input type="text" name="guardian_phone" id="guardian_phone" autocomplete="off" required><br/>  
+<label class="label" >Gender:</label>
+       <input type="radio" name="gender" id="radio1" class="radio" value="Male" required>Male  
+       <input type="radio" name="gender" id="radio2" class="radio" value="Female" required>Female<br/> 
+<label class="label" for="age">Age:</label><input type="text" name="age" id="age" required><br/>  
+<label class="label" for="dob">Date of Birth:</label><input type="date" name="dob" id="dob" required><br/>
+<label class="label" for="doj">Date of Joining:</label><input type="date" name="doj" id="doj" required><br/>
+<input type="submit"  class="but" value="Next" onclick="replace()"></div>
+<div class="boxtwo" id="div12" style="display:none">
+<label class="label" for="ten">Blood Group:</label><select name="bloodg" id="bloodg">
+                                                               <option value="A+">A+</option>
+                                                               <option value="A-">A-</option>
+                                                               <option value="B+">B+</option>
+                                                               <option value="B-">B-</option>
+                                                               <option value="AB+">AB+</option>
+                                                               <option value="AB-">AB-</option>
+                                                               <option value="O+">O+</option>
+                                                               <option value="O-">O-</option>
+                                                            </select> <br/>
+<label class="label" for="address">Address:</label><input type="text" name="address" id="address" required><br/>
+<label class="label" for="education">Education:</label><input type="text" name="education" id="education" required><br/>
+<label class="label" for="hi">Health Issue:</label><input type="text" name="hi" id="hi" required><br/>
+<label class="label" >Food:</label>
+       <input type="radio" name="food" id="radio1" class="radio" value="Vegitarian" required>Vegitarian  
+       <input type="radio" name="food" id="radio2" class="radio" value="Non Vegitarian" required>Non Vegitarian<br/>
+<label class="label" for="concession">Govt.Concession:</label><input type="text" name="concession" id="concession" required><br/>
+<label class="label" for="reason">Joining Reasons:</label><input type="text" name="reason" id="reason" required><br/>
+<label class="label" for="heirs">Heirs:</label>1.<input type="text" class="h1" name="heirs1" id="heirs1" required>
+                                               2.<input type="text" class="h1" name="heirs2" id="heirs2" >
+                                               3.<input type="text" class="h1" name="heirs3" id="heirs3" ><br/>
+                                               4.<input type="text" class="h1" name="heirs4" id="heirs4" >
+                                               5.<input type="text" class="h1" name="heirs5" id="heirs5" ><br/>
+          <input type="submit" value="Back"  class="but" onclick="backreplace()">
+         <input type="SUBMIT" value="REGISTER" class="but">
+	      <input type="RESET" value="RESET" class="but">
+	      
+
+</div>
+</form>
+<div class="box2">
+<form action="lightSearch.jsp" autocomplete="off">
+<input type="text" name="searchid" class="searchid" placeholder="search for ID" required><br/>
+<input class="button" type="submit" value="SEARCH" >
+</form>
+<form action="lightDisplay.jsp">
+<input class="button" type="submit" value="DISPLAY">
+</form>
+<form action="lightUpdate.jsp">
+<input type="text" name="UID" class="id" placeholder="UPDATED  ID..."  required><br/>
+<input class="button" type="submit" value="UPDATE">
+</form>
+
+<form action="lightDeleting.jsp" autocomplete="off">
+<input type="text" name="id" class="id" placeholder="deleting  ID..." required><br/>
+<input class="button" type="submit" value="DELETE">
+</form>
+</div>
+</body>
+</html>
